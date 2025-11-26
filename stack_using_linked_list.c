@@ -4,6 +4,14 @@ typedef struct Node {
     int data;
     struct Node* next;
 } Node;
+void printstack(Node* head){
+    Node* temp=head;
+    while (temp!=NULL){
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
+    printf("\n");
+}
 
 void insertAtEnd(Node **head_ref,int value){
     Node* newnode=malloc(sizeof(Node));
@@ -20,25 +28,6 @@ void insertAtEnd(Node **head_ref,int value){
     }
     temp->next=newnode;
     
-}
-
-void deleteAtBeginning(Node** head_ref){
-    if(*head_ref==NULL){
-        printf("cannot perform operation as list is empty");
-        return;
-    }    
-    Node* temp=*head_ref;
-    temp=temp->next;
-    free(*head_ref);
-    *head_ref=temp;
-}
-
-
-void insertAtBeginning(Node** head_ref,int value){
-    Node* newnode=malloc(sizeof(Node));
-    newnode->data=value;
-    newnode->next=*head_ref;
-    *head_ref=newnode;
 }
 
 void deleteAtEnd(Node** head_ref){
@@ -62,30 +51,15 @@ void deleteAtEnd(Node** head_ref){
     prev->next=NULL;
 }
 
-void printlist(Node* head){
-    printf("\n");
-    while(head!=NULL){
-        printf("%d ->",head->data);
-        head=head->next;
-    }
-    printf("NULL");
-}
-
-int search(Node* head,int key){
-    int index=0;
-    while(head!=NULL){
-        if(head->data==key){
-            return index;
-        }
-        head=head->next;
-        index++;
-    }return -1;
-}
 
 int main(){
     Node* head=NULL;
     insertAtEnd(&head,46);
-    insertAtBeginning(&head,87);
-    printlist(head);
+    insertAtEnd(&head,87);
+    insertAtEnd(&head,65);
+    printstack(head);
+    deleteAtEnd(&head);
+    printstack(head);
+    
     return 0;
 }

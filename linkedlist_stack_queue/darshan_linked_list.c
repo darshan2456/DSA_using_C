@@ -82,10 +82,44 @@ int search(Node* head,int key){
     }return -1;
 }
 
+void deleteByValue(Node** head_ref,int value){
+    if(*head_ref==NULL){
+        printf("cannot perform operation as list is empty");
+        return;
+    }
+    Node* curr=*head_ref;
+    Node* prev=NULL;
+    if(curr->data==value){
+        *head_ref=curr->next;
+        free(curr);
+        return;
+    }
+    while(curr->data!=value){
+        prev=curr;
+        curr=curr->next;
+        if(curr==NULL){
+            printf("\nNODE NOT FOUND!!!");
+            return;
+        }
+    }
+    prev->next=curr->next;
+    free(curr);
+}
+
+void reverseList(Node** head_ref){
+    
+}
+
 int main(){
     Node* head=NULL;
-    insertAtEnd(&head,46);
-    insertAtBeginning(&head,87);
+    insertAtBeginning(&head,78);
+    printlist(head);
+    insertAtBeginning(&head,84);
+    printlist(head);
+    insertAtBeginning(&head,62);
+    printlist(head);
+    deleteByValue(&head,7);
+    deleteByValue(&head,78);
     printlist(head);
     return 0;
 }

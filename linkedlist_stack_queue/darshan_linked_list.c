@@ -5,6 +5,9 @@ typedef struct Node {
     struct Node* next;
 } Node;
 
+//methods implemented are - insertAtEnd, deleteAtBeginning, insertAtBeginning, deleteAtEnd, printlist, search
+// deleteByValue and reverseList
+
 void insertAtEnd(Node **head_ref,int value){
     Node* newnode=malloc(sizeof(Node));
     newnode -> data=value;
@@ -75,11 +78,11 @@ int search(Node* head,int key){
     int index=0;
     while(head!=NULL){
         if(head->data==key){
-            return index;
+            return index;               //if value found returns index number
         }
         head=head->next;
         index++;
-    }return -1;
+    }return -1;                         //otherwise returns -1
 }
 
 void deleteByValue(Node** head_ref,int value){

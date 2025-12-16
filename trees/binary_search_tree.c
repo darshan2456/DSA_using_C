@@ -8,6 +8,7 @@ struct Node* left;
 struct Node* right;
 }Node;
 
+//insert function returns -1 on malloc failure, 0 when value already exists in the tree and 1 on successful insertion
 
 int bst_insert(Node** head_ref,int value){
     if((*head_ref)==NULL){

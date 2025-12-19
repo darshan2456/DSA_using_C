@@ -10,6 +10,5 @@ int main(){
     printqueue(head);
     deleteAtBeginning(&head);
     printqueue(head);
-    
     return 0;
 }

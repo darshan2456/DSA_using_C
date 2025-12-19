@@ -36,12 +36,15 @@ void deleteAtBeginning(Node** head_ref){
     *head_ref=temp;
 }
 
+//insertAtBeginning function returns 0 on allocation failure and 1 on succesful insertion
 
-void insertAtBeginning(Node** head_ref,int value){
+int insertAtBeginning(Node** head_ref,int value){
     Node* newnode=malloc(sizeof(Node));
+    if(newnode==NULL) return 0;
     newnode->data=value;
     newnode->next=*head_ref;
     *head_ref=newnode;
+    return 1;
 }
 
 void deleteAtEnd(Node** head_ref){
@@ -131,17 +134,3 @@ void reverseList(Node** head_ref){
     *head_ref=curr;
 }
 
-int main(){
-    Node* head=NULL;
-    insertAtBeginning(&head,78);
-    printlist(head);
-    insertAtBeginning(&head,84);
-    printlist(head);
-    insertAtBeginning(&head,62);
-    printlist(head);
-    insertAtBeginning(&head,29);
-    printlist(head);
-    reverseList(&head);
-    printlist(head);
-    return 0;
-}

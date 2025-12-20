@@ -3,6 +3,8 @@
 #include<string.h>
 #include "stack.h"
 
+//RN this program only has support for four operators - +-/* and parantheses. this program doesnt support '^ or %' operators
+
 int precedence(char ch){        //if precedence returns -1 char is not an operator or a left parantheses
     if(ch=='*' || ch=='/') return 2;
     else if(ch=='+' || ch=='-') return 1;

@@ -6,10 +6,13 @@ typedef struct Node{
     struct Node* next;
 } Node;
 
-void printstack(Node* head);
-void printqueue(Node* head);
+void printlist(Node* head);
 void insertAtEnd(Node **head_ref,int value);
 void deleteAtBeginning(Node** head_ref);
 void deleteAtEnd(Node** head_ref);
 int insertAtBeginning(Node** head_ref,int value);
+void linkedlist_Demo(void);
+void circular_linkedlist_Demo(void);
+void doubly_linkedlist_Demo(void);
+
 #endif

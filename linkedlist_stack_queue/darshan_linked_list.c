@@ -1,12 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct Node {
-    int data;
-    struct Node* next;
-} Node;
+#include "linkedlist.h"
 
 //methods implemented are - insertAtEnd, deleteAtBeginning, insertAtBeginning, deleteAtEnd, printlist, search
 // deleteByValue and reverseList
+
+void linkedlist_Demo(void){
+
+}
+void circular_linkedlist_Demo(void){
+
+}
+void doubly_linkedlist_Demo(void){
+    
+}
 
 void insertAtEnd(Node **head_ref,int value){
     Node* newnode=malloc(sizeof(Node));

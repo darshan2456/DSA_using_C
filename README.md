@@ -1,214 +1,90 @@
-🧠📦 DSA_using_C
+## 🧠📦 DSA_using_C
 
-A Data Structures and Algorithms repository implemented in pure C, focused on pointer-level reasoning, manual memory management, and correctness invariants.
-Built from scratch to develop systems-grade C fundamentals suitable for open-source contributions, GSoC, and FAANG-level engineering.
+**DSA_using_C** is a systems-focused Data Structures & Algorithms repository written entirely in **pure C**.
+All structures are implemented from scratch with explicit pointer manipulation, manual memory management, and invariant correctness.
 
-✅ What Is Implemented (Concrete Work)
+The goal is not API usage, but **learning how data structures actually work in memory**, preparing for open-source C contributions, GSoC, and systems-oriented FAANG roles.
 
-All implementations are written from scratch in C, using dynamic memory, explicit ownership, and pointer manipulation.
+---
 
-🔹 Core C Foundations
+## ⚙️ Build & Run
 
-Variables, control flow, functions
+From the `linkedlist_stack_queue` directory:
 
-Arrays and strings
+```bash
 
-Modular code using header (.h) and source (.c) files
+gcc ^
+main.c ^
+sll.c ^
+dll.c ^
+circular_queue.c ^
+..\trees\binary_search_tree.c ^
+..\expression_evaluation\infix_to_postfix.c ^
+..\expression_evaluation\postfix_evaluation.c ^
+..\expression_evaluation\stack.c ^
+-I. ^
+-I..\trees ^
+-I..\expression_evaluation ^
+-o main.exe
 
-Multi-file program structure
+```
 
-🔹 Pointer & Memory Mastery
+This project is intentionally compiled using **explicit multi-file compilation and linking** to reinforce understanding of translation units, include paths, and linker behavior.
 
-Pointer semantics and dereferencing
+---
 
-Pointer arithmetic
+## 🧩 Core Focus Areas
 
-Pointer-to-pointer usage (e.g. modifying head pointers)
+* Modular C design using `.h` / `.c` separation
+* Pointer semantics and pointer-to-pointer usage
+* Dynamic memory allocation (`malloc` / `free`)
+* Ownership, lifetime, and NULL-safety reasoning
+* Debugging compilation and linker errors
 
-malloc / free
+---
 
-Ownership and lifetime reasoning
+## 🧱 Implemented Data Structures
 
-Safe handling of NULL
+**Singly Linked List**
+Full CRUD operations, pointer-based reversal, correct head manipulation, and edge-case handling.
 
-🧱 Data Structures
-🔗 Singly Linked List
+**Doubly Linked List**
+Bidirectional traversal with strict `prev` / `next` invariant maintenance and safe deletions.
 
-Full CRUD operations
+**Stack (Linked List Based)**
+Abstracted over a singly linked list with `push`, `pop`, `peek`, `isEmpty`, and `destroyStack`.
 
-Insertion at head, tail, and arbitrary positions
+**Circular Queue (Array Based)**
+Fixed-size implementation using modulo arithmetic, maintaining a one-empty-slot invariant to distinguish full vs empty states.
 
-Deletion with correct head manipulation
+**Binary Search Tree (BST)**
+Recursive insertion, in-order / pre-order / post-order traversals, and node counting.
 
-Traversal and display
+---
 
-Pointer-based reversal
+## 🔢 Expression Parsing
 
-Edge case handling (empty list, single node)
+* **Infix → Postfix conversion** using a stack
+* **Postfix evaluation** with safe operand handling
 
-🔁 Doubly Linked List
+Focus is on operator precedence, associativity, and stack discipline.
 
-Bidirectional traversal
+---
 
-Insertion and deletion
+## 🧪 Testing Philosophy
 
-Correct maintenance of prev / next pointers
+All structures are tested via **console-based dispatcher programs**, with emphasis on:
 
-Robust handling of boundary cases
+* Empty and single-element cases
+* Overflow / underflow behavior
+* Pointer safety and memory cleanup
 
-📚 Stack (Linked List Based)
+Reasoning precedes execution.
 
-Implemented as an abstraction over a linked list.
+---
 
-Operations:
+## 👤 Author
 
-push
-
-pop
-
-peek
-
-isEmpty
-
-destroyStack
-
-Focus areas:
-
-LIFO invariants
-
-Empty-stack safety
-
-Memory cleanup discipline
-
-🔄 Circular Queue (Array Based)
-
-Fixed-size array implementation
-
-Circular behavior using modulo arithmetic
-
-One-empty-slot invariant to distinguish full vs empty
-
-Front and rear pointer management
-
-Wrap-around enqueue/dequeue logic
-
-🌳 Binary Search Tree (BST)
-
-Node insertion
-
-Recursive traversals:
-
-In-order
-
-Pre-order
-
-Post-order
-
-Node counting
-
-Recursive invariant reasoning
-
-🔢 Expression Parsing
-➕ Infix to Postfix Conversion
-
-Stack-based parsing
-
-Operator precedence handling
-
-Left associativity
-
-Parentheses handling
-
-Character classification
-
-➗ Postfix Evaluation
-
-Stack-based evaluation
-🚧 Planned and currently in progress
-
-⚙️ Build System & Tooling
-
-Compiled using GCC with explicit multi-file compilation and linking.
-
-gcc main.c stack.c linkedlist.c -I../include -o program
-
-
-Practiced concepts:
-
-Include paths (-I)
-
-Relative paths
-
-Compilation vs linking stages
-
-Linker error debugging
-
-🧪 Testing & Validation
-
-Console-based testing
-
-Manual verification of:
-
-Empty structures
-
-Single-element cases
-
-Overflow / underflow scenarios
-
-Emphasis on reasoning before execution
-
-📌 Abstract & Intent (Why This Repo Exists)
-
-This repository is not about memorizing APIs or using STL-like abstractions.
-Every data structure here is built manually, with a strong focus on:
-
-🧠 Reasoning about pointers and memory
-
-🧮 Maintaining invariants
-
-🧼 Writing clean, modular C
-
-🔍 Debugging at the source level
-
-The goal is to move from “I can write C” to “I can safely work inside a large C codebase.”
-
-This repo serves as:
-
-A foundation for open-source C contributions
-
-Preparation for GSoC
-
-Groundwork for systems-oriented FAANG roles
-
-🗂 Repository Structure
-.
-├── *.c        // Implementations
-├── *.h        // Interfaces
-├── main.c     // Driver / testing
-
-
-Principles followed:
-
-Clear separation of interface and implementation
-
-No circular dependencies
-
-Readable, reviewable code
-
-🚀 Future Enhancements
-
-Complete postfix expression evaluation
-
-Add defensive programming and error handling
-
-Introduce debugging workflows (gdb, valgrind)
-
-Refactor modules for production-level clarity
-
-Use this codebase as a launchpad for OSS contributions
-
-👤 Author
-
-Darshan Parekh
+**Darshan Parekh**
 B.Sc. Computer Science
-Focused on systems programming, open-source contributions and cybersecurity 🚀
+Systems programming • Open-source • Cybersecurity 🚀

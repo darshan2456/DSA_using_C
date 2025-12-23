@@ -33,6 +33,30 @@ This project is intentionally compiled using **explicit multi-file compilation a
 
 ---
 
+🖥️🎮 Console-Based Application
+
+This repository now includes a fully functional, menu-driven console application that lets you interactively explore and validate all implemented data structures and algorithms from a single place 🚀
+
+How to use it:
+
+1️⃣ Clone the repository
+2️⃣ Move into the linkedlist_stack_queue directory 📂
+3️⃣ Compile the project using the build command shown above 🛠️
+4️⃣ Run main.exe and start interacting via the console 🧑‍💻✨
+
+From the menu, you can work with:
+
+🔹 Singly Linked List
+🔹 Doubly Linked List
+🔹 Circular Queue
+🔹 Binary Search Tree
+🔹 Infix → Postfix conversion
+🔹 Postfix evaluation
+
+This console driver acts as a control layer 🎛️ and verification playground 🧩, making it easy to observe behavior, edge cases, and internal invariants across modules — step by step, in real time ⚙️🧠
+
+---
+
 ## 🧩 Core Focus Areas
 
 * Modular C design using `.h` / `.c` separation

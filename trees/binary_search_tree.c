@@ -88,17 +88,31 @@ int countnodes(bstNode* head){
 
 void binary_search_tree_Demo(void){
     bstNode* head=NULL;
-    bst_insert(&head,78);
-    bst_insert(&head,46);
-    bst_insert(&head,23);
-    bst_insert(&head,12);
-    bst_insert(&head,19);
-    bst_inorder(head);
-    printf("\n");
-    bst_preorder(head);
-    printf("\n");
-    bst_postorder(head);
-    int count=0;
-    count=countnodes(head);
-    printf("\n number of nodes in tree is :- %d",count);
+    int total_bst_nodes;
+    printf("enter total number of nodes you want in the bst :- ");
+    scanf("%d",&total_bst_nodes);
+    while(total_bst_nodes>0){
+        int value;
+        printf("\nenter value of %d bst node - ",total_bst_nodes);
+        scanf("%d",&value);
+        bst_insert(&head,value);
+        total_bst_nodes--;
+    }
+
+    int choice;
+    printf("enter '1' for inorder, '2' for preorder and '3' for postorder :- ");
+    scanf("%d",&choice);
+    if(choice==1){
+        bst_inorder(head);
+    }
+    else if(choice==2){
+        bst_preorder(head);
+    }
+    else if(choice==3){
+        bst_postorder(head);
+    }
+    else{
+        printf("\nenter only one of the three - 1,2,3");
+    }
+
 }

@@ -6,26 +6,65 @@
 //delete functions return 1 on successful deletion and -1 on failure due to empty list
 //methods implemented are - insertAtBeginning, insertAtEnd, printlist, search, deleteAtBeginning, deleteAtEnd and deleteByValue
 
+
 void dll_Demo(void){
     doubly_ll_Node* head=NULL;
-    int value,value1,value2;
-    printf("enter number to be inserted at beginning - ");
-    scanf("%d",&value);
-    dll_insertAtBeginning(&head,value);
-    printf("enter number to be inserted at beginning - ");
-    scanf("%d",&value1);
-    dll_insertAtBeginning(&head,value1);
-    printf("\nenter number to be inserted at beginning - ");
-    scanf("%d",&value2);
-    dll_insertAtBeginning(&head,value2);
-    printf("the current list is :-\n");
-    dll_printlist(head);
-    int search_value;
-    printf("\nenter the number whose index you want to search :- ");
-    scanf("%d",&search_value);
-    int index=dll_search(head,search_value);
-    printf("\nentered number found at index %d",index,"\n");
-    dll_printlist(head);
+    int total_nodes;
+    printf("how many value you want to insert? \ngive number of nodes : ");
+    scanf("%d",&total_nodes);
+    
+    //insertion of nodes in dll
+    while(total_nodes>0){
+        int indicator,value;
+        printf("\ntype '0' if you want to insert from end and '1' if you want to insert from beginning - ");
+        scanf("%d",&indicator);
+        if(indicator==0){
+            printf("enter the value to be inserted at end - ");
+            scanf("%d",&value);
+            dll_insertAtEnd(&head,value);
+            dll_printlist(head);
+        }
+        else if(indicator==1){
+            printf("enter the value to be inserted at beginning - ");
+            scanf("%d",&value);
+            dll_insertAtBeginning(&head,value);
+            dll_printlist(head);
+        }
+        else{
+            printf("select only one option from 0 or 1. this chance is lost as punishment lol");
+        }
+        total_nodes--;
+    }
+
+
+    //searching elements in the dll
+    while(1){
+        int search_value,choice;
+        printf("\nenter the number you want to search :- ");
+        scanf("%d",&search_value);
+        int index=dll_search(head,search_value);
+        printf("entered number found at index %d",index);
+        printf("\nenter '-1' if you want to exit and any number to again search : ");
+        scanf("%d",&choice);
+        if(choice==-1) break;
+    }
+    
+
+    //deleting values from dll
+    while(1){
+        int del_val,choice;
+        printf("enter element to be deleted :- ");
+        scanf("%d",&del_val);
+        dll_deleteByValue(&head,del_val);
+        printf("dll after deletion - ");
+        dll_printlist(head);
+        printf("\nenter '-1' if you want to exit and any number to again delete :- ");
+        scanf("%d",&choice);
+        if(choice==-1){
+            break;
+        }
+    }
+    
 }
 
 int dll_insertAtBeginning(doubly_ll_Node** head_ref,int value){
@@ -66,7 +105,7 @@ int dll_insertAtEnd(doubly_ll_Node** head_ref,int value){
 }
 
 void dll_printlist(doubly_ll_Node* head){
-    printf("\n");
+    printf("\nHEAD<-> ");
     while(head!=NULL){
         printf("%d <->",head->data);
         head=head->next;

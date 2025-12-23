@@ -9,15 +9,59 @@
 
 void sll_Demo(void){
     Node* head=NULL;
-    sll_insertAtBeginning(&head,34);
-    sll_insertAtBeginning(&head,98);
-    sll_insertAtEnd(&head,57);
-    sll_insertAtEnd(&head,19);
-    sll_printlist(head);
-    int index=sll_search(head,98);
-    sll_deleteByValue(&head,57);
-    sll_printlist(head);
-    sll_reverseList(&head);
+    int element_count;
+    printf("enter how many elements you want to insert :- ");
+    scanf("%d",&element_count);
+    while(element_count>0){
+        int choice,value;
+        printf("\nenter '1' for inserting at end and '0' for inserting at beginning :- ");
+        scanf("%d",&choice);
+        if(choice==1){
+            printf("enter the element you want to insert at end :- ");
+            scanf("%d",&value);
+            sll_insertAtEnd(&head,value);
+            sll_printlist(head);
+        }
+        else if(choice==0){
+            printf("enter the element you want to insert at beginning :- ");
+            scanf("%d",&value);
+            sll_insertAtBeginning(&head,value);
+            sll_printlist(head);
+        }
+        else{
+            printf("only select one between 0 and 1. now this chance is gone lol.");
+        }
+        element_count--;
+    }
+
+    //searching elements in sll
+    while(1){
+        int value,choice;
+        printf("\nenter the element to be searched :- ");
+        scanf("%d",&value);
+        int index=sll_search(head,value);
+        printf("\nelement found at index :- %d",index);
+        printf("\nenter '-1' to exit or any number to search again :- ");
+        scanf("%d",&choice);
+        if(choice==-1){
+            break;
+        }
+    }
+    
+
+    //deleting elements in sll
+    while(1){
+        int value,choice;
+        printf("enter the element to be deleted :- ");
+        scanf("%d",&value);
+        sll_deleteByValue(&head,value);
+        sll_printlist(head);
+        printf("\nenter '-1' to exit or any number to delete again :- ");
+        scanf("%d",&choice);
+        if(choice==-1){
+            break;
+        }
+    }
 }
 
 

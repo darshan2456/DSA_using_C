@@ -3,6 +3,6 @@
 #include "stack.h"
 
 void infix_to_postfix_Demo(void);
-void postfix_evaluation_Demo(void);
+int postfix_evaluation_Demo(void);
 
 #endif

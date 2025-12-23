@@ -6,6 +6,9 @@
 #include "expression.h"
 #include "circular_queue.h"
 
+//only give input as integer value as prompted through the console by programmer. dont attempt to put any other type of value
+//neglecting this warning can result in undefined behaviour
+
 int main(){
     int choice;
 start:  printf(
@@ -15,7 +18,8 @@ start:  printf(
         "click 3 for doubly linked-list\n"
         "click 4 for binary search tree\n"
         "click 5 for infix to postfix conversion\n"
-        "click 6 for postfix evaluation\n"
+        "click 6 for postfix evaluation\n\n"
+        "enter choice : "
         );
     scanf("%d",&choice);
     if(choice<1 || choice >6){
@@ -43,5 +47,5 @@ start:  printf(
             postfix_evaluation_Demo();
             break;
     }
-
+    return 0;
 }

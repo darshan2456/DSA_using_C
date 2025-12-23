@@ -19,15 +19,27 @@ void circular_queue_Demo(void){
         printf("\nmalloc allocation failure");
         return;
     }
+
+    //taking number of elements user want to enqueue
     else{
         int count;
-        printf("how many elements you want to enqueue? :- ");
-        scanf("%d",&count);
-        if(count>capacity-1){
-            printf("cannot enqueue more elements than capacity");
-            return;
+        while(1){
+            printf("how many elements you want to enqueue? :- ");
+            scanf("%d",&count);
+            if(count>capacity-1){
+                printf("cannot enqueue more elements than capacity");
+                continue;
+            }
+            else if(count<=0){
+                printf("cannot enqueue less elements than 1");
+                continue;
+            }
+            else{
+                break;
+            }
         }
-        else{
+        
+        //enqueue demo logic
             while(count>0){
                 int value;
                 printf("\nenter the element you want to enqueue :- ");
@@ -41,10 +53,30 @@ void circular_queue_Demo(void){
             printf("\nhere is your circular queue :- ");
             display_circ_queue(&rollnos);
         }
-    }
-    
-    destroy_circ_queue(&rollnos);
+
+        //dequeue demo logic
+        while(1){
+            int choice;
+            printf("\nif you want to dequeue one element press '1' otherwise exit on '0' :- ");
+            scanf("%d",&choice);
+            if(choice==1){
+                dequeue(&rollnos);
+                display_circ_queue(&rollnos);
+            }
+            else if(choice==0){
+                break;
+            }
+            else{
+                continue;
+            }
+        }
+
+        destroy_circ_queue(&rollnos);
+
 }
+    
+    
+
 
 int init_circ_queue(int N, circular_queue* queue_ptr){
     if(N<2) return 0;
@@ -79,7 +111,7 @@ int dequeue(circular_queue* queue_ptr){
 void display_circ_queue(circular_queue* queue_ptr){
     int i=queue_ptr->front;
     while(i!=queue_ptr->rear){
-        printf("%d->",queue_ptr->arr[i]);
+        printf("%d<->",queue_ptr->arr[i]);
         i=(i+1)%queue_ptr->N;
     }
 }

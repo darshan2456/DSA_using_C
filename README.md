@@ -3,7 +3,7 @@
 **DSA_using_C** is a systems-focused Data Structures & Algorithms repository written entirely in **pure C**.
 All structures are implemented from scratch with explicit pointer manipulation, manual memory management, and invariant correctness.
 
-The goal is not API usage, but **learning how data structures actually work in memory**, preparing for open-source C contributions, GSoC, and systems-oriented FAANG roles.
+The goal is not API usage, but **learning how data structures actually work in memory**, preparing for open-source C contributions.
 
 ---
 

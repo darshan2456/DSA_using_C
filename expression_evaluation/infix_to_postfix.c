@@ -58,7 +58,7 @@ void infix_to_postfix_Demo(void){
     i++;
     }
 
-    while(!isEmpty(operators)){
+    while(!isEmpty(operators)){         //flushing all remaining operators in the stack
         char op=pop(operators);
         printf("%c",op);
     }

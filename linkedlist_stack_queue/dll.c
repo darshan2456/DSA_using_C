@@ -56,7 +56,7 @@ void dll_Demo(void){
         printf("enter element to be deleted :- ");
         scanf("%d",&del_val);
         dll_deleteByValue(&head,del_val);
-        printf("dll after deletion - ");
+        printf("\ndll after deletion - ");
         dll_printlist(head);
         printf("\nenter '-1' if you want to exit and any number to again delete :- ");
         scanf("%d",&choice);
@@ -182,6 +182,7 @@ int dll_deleteByValue(doubly_ll_Node** head_ref, int key){
         }
         temp=temp->next;
     }
+    printf("\nNode not found!!!");
     return -1;
 }
 

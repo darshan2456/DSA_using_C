@@ -127,7 +127,7 @@ void sll_deleteAtEnd(Node** head_ref){
 }
 
 void sll_printlist(Node* head){
-    printf("\n");
+    printf("\nHEAD->");
     while(head!=NULL){
         printf("%d ->",head->data);
         head=head->next;
@@ -162,7 +162,7 @@ void sll_deleteByValue(Node** head_ref,int value){
         prev=curr;
         curr=curr->next;
         if(curr==NULL){
-            printf("\nNODE NOT FOUND!!!");
+            printf("\nNode not found!!!");
             return;
         }
     }

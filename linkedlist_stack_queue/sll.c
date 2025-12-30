@@ -55,6 +55,7 @@ void sll_Demo(void){
         printf("enter the element to be deleted :- ");
         scanf("%d",&value);
         sll_deleteByValue(&head,value);
+        printf("\nsll after deletion - ");
         sll_printlist(head);
         printf("\nenter '-1' to exit or any number to delete again :- ");
         scanf("%d",&choice);

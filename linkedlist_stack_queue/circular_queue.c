@@ -24,7 +24,7 @@ void circular_queue_Demo(void){
     else{
         int count;
         while(1){
-            printf("how many elements you want to enqueue? :- ");
+            printf("\nhow many elements you want to enqueue? :- ");
             scanf("%d",&count);
             if(count>capacity-1){
                 printf("cannot enqueue more elements than capacity");
@@ -39,7 +39,7 @@ void circular_queue_Demo(void){
             }
         }
         
-        //enqueue demo logic
+        //enqueue logic
             while(count>0){
                 int value;
                 printf("\nenter the element you want to enqueue :- ");
@@ -54,13 +54,19 @@ void circular_queue_Demo(void){
             display_circ_queue(&rollnos);
         }
 
-        //dequeue demo logic
+        //dequeue logic
         while(1){
             int choice;
+            circular_queue* curr=&rollnos;
             printf("\nif you want to dequeue one element press '1' otherwise exit on '0' :- ");
             scanf("%d",&choice);
             if(choice==1){
+                if(curr->front==curr->rear){
+                    printf("\ncircular queue is empty now.");
+                    return;
+                }
                 dequeue(&rollnos);
+                printf("\nhere is your circular queue after dequeue :- ");
                 display_circ_queue(&rollnos);
             }
             else if(choice==0){

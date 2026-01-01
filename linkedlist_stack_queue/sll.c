@@ -126,7 +126,7 @@ void sll_deleteAtEnd(Node** head_ref){
     prev->next=NULL;
 }
 
-void sll_printlist(Node* head){
+void sll_printlist(const Node* head){
     printf("\nHEAD->");
     while(head!=NULL){
         printf("%d ->",head->data);
@@ -135,7 +135,7 @@ void sll_printlist(Node* head){
     printf("NULL");
 }
 
-int sll_search(Node* head,int key){
+int sll_search(const Node* head,int key){
     int index=0;
     while(head!=NULL){
         if(head->data==key){

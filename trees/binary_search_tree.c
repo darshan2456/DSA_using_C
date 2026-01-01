@@ -2,11 +2,7 @@
 #include<stdlib.h>
 #include "bst.h"
 
-int bst_insert(bstNode** head_ref,int value);
-void bst_inorder(bstNode* head);
-void bst_preorder(bstNode* head);
-void bst_postorder(bstNode* head);
-int countnodes(bstNode* head);
+
 
 //insert function returns -1 on malloc failure, 0 when value already exists in the tree and 1 on successful insertion
 
@@ -51,7 +47,7 @@ int bst_insert(bstNode** head_ref,int value){
     return -1;
 }
 
-void bst_inorder(bstNode* head){
+void bst_inorder(const bstNode* head){
     if(head==NULL){
         return;
     }
@@ -60,7 +56,7 @@ void bst_inorder(bstNode* head){
     bst_inorder(head->right);
 }
 
-void bst_preorder(bstNode* head){
+void bst_preorder(const bstNode* head){
     if(head==NULL){
         return;
     }
@@ -69,7 +65,7 @@ void bst_preorder(bstNode* head){
     bst_preorder(head->right);
 }
 
-void bst_postorder(bstNode* head){
+void bst_postorder(const bstNode* head){
     if(head==NULL){
         return;
     }
@@ -78,7 +74,7 @@ void bst_postorder(bstNode* head){
     printf("%d,",head->data);
 }
 
-int countnodes(bstNode* head){
+int countnodes(const bstNode* head){
     if(head==NULL) return 0;
     if(head->left==NULL&&head->right==NULL){
         return 1;

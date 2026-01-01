@@ -104,7 +104,7 @@ int dll_insertAtEnd(doubly_ll_Node** head_ref,int value){
     return 1;
 }
 
-void dll_printlist(doubly_ll_Node* head){
+void dll_printlist(const doubly_ll_Node* head){
     printf("\nHEAD<-> ");
     while(head!=NULL){
         printf("%d <->",head->data);
@@ -113,7 +113,7 @@ void dll_printlist(doubly_ll_Node* head){
     printf("NULL");
 }
 
-int dll_search(doubly_ll_Node* head,int key){
+int dll_search(const doubly_ll_Node* head,int key){
     int index=0;
     while(head!=NULL){
         if(head->data==key){

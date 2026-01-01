@@ -27,7 +27,7 @@ stack* createStack(void){
     return stack_obj;
 }
 
-int isEmpty(stack* s){
+int isEmpty(const stack* s){
     return s->top==NULL;
 }
 
@@ -38,7 +38,7 @@ void destroyStack(stack* s){
     free(s);
 }
 
-int peek(stack* s){
+int peek(const stack* s){
     if(s->top==NULL) return -1;
     return s->top->data;
 }

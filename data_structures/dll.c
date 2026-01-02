@@ -43,7 +43,7 @@ void dll_Demo(void){
         printf("\nenter the number you want to search :- ");
         scanf("%d",&search_value);
         int index=dll_search(head,search_value);
-        printf("entered number found at index %d",index);
+        printf("\nentered number found at index %d",index);
         printf("\nenter '-1' if you want to exit and any number to again search : ");
         scanf("%d",&choice);
         if(choice==-1) break;

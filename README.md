@@ -15,17 +15,19 @@ dll.c ^
 array.c ^
 circular_queue.c ^
 binary_search_tree.c ^
+data_structures_demo.c ^
 ..\expression_evaluation\infix_to_postfix.c ^
 ..\expression_evaluation\postfix_evaluation.c ^
 ..\expression_evaluation\stack.c ^
-..\algorithms\bubble_sort.c ^
-..\algorithms\insertion_sort.c ^
-..\algorithms\selection_sort.c ^
-..\algorithms\algorithms_demo.c ^
+..\expression_evaluation\expression_evaluation_demo.c ^
+..\sorting_algorithms\bubble_sort.c ^
+..\sorting_algorithms\insertion_sort.c ^
+..\sorting_algorithms\selection_sort.c ^
+..\sorting_algorithms\sorting_algorithms_demo.c ^
 -I. ^
 -I..\expression_evaluation ^
--I..\algorithms ^
--o a.exe
+-I..\sorting_algorithms ^
+-o demo.exe
 
 ```
 This project is intentionally compiled using **explicit multi-file compilation and linking** to reinforce understanding of translation units, include paths, and linker behavior.

@@ -7,7 +7,7 @@
 //methods implemented are - insertAtBeginning, insertAtEnd, printlist, search, deleteAtBeginning, deleteAtEnd and deleteByValue
 
 
-void dll_Demo(void){
+void dll_demo(void){
     doubly_ll_Node* head=NULL;
     int total_nodes;
     printf("how many value you want to insert? \ngive number of nodes : ");

@@ -14,6 +14,6 @@ int dll_search(const doubly_ll_Node* head,int key);
 int dll_deleteAtBeginning(doubly_ll_Node** head_ref);
 int dll_deleteAtEnd(doubly_ll_Node** head_ref);
 int dll_deleteByValue(doubly_ll_Node** head_ref, int key);
-void dll_Demo(void);
+void dll_demo(void);
 
 #endif

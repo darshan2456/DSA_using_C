@@ -62,7 +62,7 @@ void circular_queue_Demo(void){
             scanf("%d",&choice);
             if(choice==1){
                 if(curr->front==curr->rear){
-                    printf("\ncircular queue is empty now.");
+                    printf("\ncannot deque empty queue. exiting.");
                     return;
                 }
                 dequeue(&rollnos);

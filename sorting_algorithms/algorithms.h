@@ -4,5 +4,5 @@
 void bubble_sort_optimized_demo(void);
 void insertion_sort_demo(void);
 void selection_sort_demo(void);
-void sorting_algorithm_demo(void);
+void sorting_algorithms_demo(void);
 #endif

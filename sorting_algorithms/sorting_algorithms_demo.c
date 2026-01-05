@@ -1,7 +1,7 @@
 #include "algorithms.h"
 #include<stdio.h>
 
-void sorting_algorithm_demo(void){
+void sorting_algorithms_demo(void){
 
     while(1){
         int repeat,choice;

@@ -36,7 +36,7 @@ void array_demo(void){
         printf("\nminimum element is :- %d",min_element);
 
 
-        printf("\nenter any number to test another array and '-1' to exit\n");
+        printf("\nenter any number to test another array and '-1' to exit :- ");
         scanf("%d",&choice);
 
         if(choice==-1) break;

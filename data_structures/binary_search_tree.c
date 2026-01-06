@@ -109,6 +109,7 @@ void binary_search_tree_Demo(void){
         }
         else{
             printf("\nenter only one of the three - 1,2,3");
+            continue;
         }
 
         printf("\nenter '-1' to exit and any other number to try different traversal pattern :- ");

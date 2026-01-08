@@ -81,10 +81,6 @@
 
             destroyStack(operators);
 
-
-           /* printf("\nenter any number to test another expression and '-1' to exit :- ");
-            scanf("%d",&choice);
-            if(choice==-1) break;   */
         }
         
     }

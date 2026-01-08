@@ -3,14 +3,11 @@
 #include "safe_input.h"
 #include<ctype.h>
 
-//this function returns 1 on valid postfix expression and 0 on EOF and retry until valid expression
-//input is taken by scanf() so input parameter cannot contain whitespaces
-//so input parameter must not contain whitespaces
+//this function returns 1 on valid postfix expression and 0 on EOF/failure, -111 on exit signal ie 'X'
+//input cannot contain whitespaces
 
 int validate_postfix_expr(char *buff,size_t size,const char *prompt){
 
-    while(1){
-        
         int depth=0;
 
         if(prompt){
@@ -38,13 +35,13 @@ int validate_postfix_expr(char *buff,size_t size,const char *prompt){
                 depth--;
                 if(depth<1){
                     printf("\ninvalid: too many operators");
-                    goto retry;
+                    return 0;
                     }
                 }
 
                 else{
                     printf("\ninvalid character : %c",c);           //character other than alphanumeric and +,-,*,/
-                    goto retry;
+                    return 0;
                 }
 
                 i++;
@@ -52,16 +49,10 @@ int validate_postfix_expr(char *buff,size_t size,const char *prompt){
         
         if(depth>1){
             printf("\ninvalid: too many operands");
-            continue;
+            return 0;
         }
         if(depth==1){
             return 1;
         }
         
-        
-        retry:      continue;
-
-    }
-
-    return 1;
 }

@@ -17,12 +17,12 @@ circular_queue.c ^
 binary_search_tree.c ^
 data_structures_demo.c ^
 safe_input_int.c ^
-safe_input_infix.c ^
-safe_input_postfix.c ^
 ..\expression_evaluation\infix_to_postfix.c ^
 ..\expression_evaluation\postfix_evaluation.c ^
 ..\expression_evaluation\stack.c ^
 ..\expression_evaluation\expression_evaluation_demo.c ^
+..\expression_evaluation\safe_input_infix.c ^
+..\expression_evaluation\safe_input_postfix.c ^
 ..\sorting_algorithms\bubble_sort.c ^
 ..\sorting_algorithms\insertion_sort.c ^
 ..\sorting_algorithms\selection_sort.c ^
@@ -43,7 +43,7 @@ How to use it:
 1️⃣ Clone the repository
 2️⃣ Move into the data_structures directory 📂
 3️⃣ Compile the project using the build command shown above 🛠️
-4️⃣ Run a.exe and start interacting via the console 🧑‍💻✨
+4️⃣ Run demo.exe and start interacting via the console 🧑‍💻✨
 From the menu, you can work with:
 🔹 Singly Linked List
 🔹 Doubly Linked List

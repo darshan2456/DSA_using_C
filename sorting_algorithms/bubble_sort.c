@@ -1,33 +1,45 @@
 #include<stdio.h>
 #include "array.h"
+#include "safe_input.h"
+
 
 void bubble_sort_optimized(int arr[], int length_of_array);
 
 void bubble_sort_optimized_demo(void){
     int length_of_array;
     while(1){
-        int choice;
-        printf("\nenter no of elements of array you want to sort (dont give greater than 100):- ");
-        scanf("%d",&length_of_array);
 
-        if(length_of_array<1 || length_of_array>100){
-            printf("\nenter length of array between 1 and 1oo\n");
-            continue;
+        int bubble_sort_status=safe_input_int(&length_of_array,
+        "\nenter no of elements of array you want to sort (between 1 and 100), enter '-1' to exit:- ",
+        1,100);
+
+        if(bubble_sort_status==0)      continue;            //retry on failure
+
+        if(bubble_sort_status==INPUT_EXIT_SIGNAL){           //exit condition, user enters '-1'
+            printf("\nExiting bubble sort demo....\n");
+            return;
         }
+        
         int arr[length_of_array];
 
         for(int i=0;i<length_of_array;i++){
-            printf("\nenter element no %d :- ",i);
-            scanf("%d",&arr[i]);
+        retry:  printf("\nenter element no %d, (between 1 and 100), enter '-1' to exit:- ",i);
+                int element_status=safe_input_int(&arr[i],NULL,1,100);
+
+                if(element_status==INPUT_EXIT_SIGNAL){
+                    printf("\nExiting bubble sort demo\n");
+                    return;
+                }
+
+                if(element_status==0){
+                    printf("\nEntered out of range value or character other than numbers. Try again\n");
+                    goto retry;
+                }
         }
 
         printf("\nsee bubble sort in action :- \n");
         bubble_sort_optimized(arr,length_of_array);
 
-        printf("\nenter any number to again try bubble_sort or '-1' to exit :- ");
-        scanf("%d",&choice);
-
-        if(choice==-1)  break;
     }
     
 }

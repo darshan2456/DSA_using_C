@@ -6,7 +6,8 @@
 #include "array.h"
 #include "bst.h"
 #include "expression.h"
-#include "algorithms.h"
+#include "sorting_algorithms.h"
+#include "searching_algorithms.h"
 #include "safe_input.h"
 
 void data_structures_demo(void);
@@ -25,8 +26,9 @@ int main(){
         "click 1 for data structures demo\n"
         "click 2 for expression evaluation (infix to postfix and postfix evaluation) demo\n"
         "click 3 for sorting algorithms demo\n"
+        "click 4 for searching algorithms demo\n"
         "enter choice : ",
-        1,3                                                             //limits
+        1,4                                                             //limits
         );
         
         if(status==-111){
@@ -46,6 +48,9 @@ int main(){
                 break;
             case 3:
                 sorting_algorithms_demo();
+                break;
+            case 4:
+                searching_algorithms_demo();
                 break;
             }
 

@@ -87,11 +87,14 @@ void binary_search_tree_Demo(void){
     int total_bst_nodes;
     printf("enter total number of nodes you want in the bst :- ");
     scanf("%d",&total_bst_nodes);
+
+    int i=1;
     while(total_bst_nodes>0){
         int value;
-        printf("\nenter value of %d bst node - ",total_bst_nodes);
+        printf("\nenter value of %d bst node - ",i);
         scanf("%d",&value);
         bst_insert(&head,value);
+        i++;
         total_bst_nodes--;
     }
     while(1){
@@ -118,5 +121,4 @@ void binary_search_tree_Demo(void){
 
     }
     
-
 }

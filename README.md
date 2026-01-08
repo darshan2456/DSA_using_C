@@ -27,9 +27,13 @@ safe_input_int.c ^
 ..\sorting_algorithms\insertion_sort.c ^
 ..\sorting_algorithms\selection_sort.c ^
 ..\sorting_algorithms\sorting_algorithms_demo.c ^
+..\searching_algorithms\binary_search.c ^
+..\searching_algorithms\linear_search.c ^
+..\searching_algorithms\searching_algorithms_demo.c ^
 -I. ^
 -I..\expression_evaluation ^
 -I..\sorting_algorithms ^
+-I..\searching_algorithms ^
 -o demo.exe
 
 ```

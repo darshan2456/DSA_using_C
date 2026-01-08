@@ -1,13 +1,13 @@
 #include<stdio.h>
-#include "algorithms.h"
+#include "sorting_algorithms.h"
 #include "safe_input.h"
 
 
 void sorting_algorithms_demo(void){
-    int status,choice;
+    int sorting_algo_status,sorting_algo_choice;
     while(1){
-        status=safe_input_int(
-            &choice,
+        sorting_algo_status=safe_input_int(
+            &sorting_algo_choice,
             "\nenter 1 for bubble sort"
             "\nenter 2 for insertion sort"
             "\nenter 3 for selection sort"
@@ -15,14 +15,14 @@ void sorting_algorithms_demo(void){
             1,3
         );
 
-        if(status==-111){
+        if(sorting_algo_status==-111){
             printf("\nExiting sorting_algorithms_demo.....\n");
             return;
-        };
+        }
 
-        if(status==0)   continue;
+        if(sorting_algo_status==0)   continue;
 
-        switch(choice){
+        switch(sorting_algo_choice){
             case 1:
                 bubble_sort_optimized_demo();
                 break;
@@ -33,7 +33,5 @@ void sorting_algorithms_demo(void){
                 selection_sort_demo();
                 break;
         }
-
-    }
-    
+    }    
 }

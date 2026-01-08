@@ -59,8 +59,11 @@ void selection_sort(int arr[],int length_of_array){
             arr[i]=temp;
         }
         
-        printf("after iteration no %d - ",i+1);
-        print_array(arr,length_of_array);
-        printf("\n");
+        // printf("after iteration no %d - ",i+1);
+        // print_array(arr,length_of_array);
+        // printf("\n");
     }
+
+    printf("\narray sorted by selection sort is:- ");
+    print_array(arr,length_of_array);
 }

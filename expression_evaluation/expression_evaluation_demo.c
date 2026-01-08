@@ -30,7 +30,4 @@ void expression_evaluation_demo(void){
             continue;
         }
     }
-
-
-
 }

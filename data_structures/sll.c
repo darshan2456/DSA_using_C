@@ -34,10 +34,16 @@ void sll_Demo(void){
         element_count--;
     }
 
+    printf("\n\nReverse of the given list is :-");
+    sll_reverseList(&head);
+    sll_printlist(head);
+    sll_reverseList(&head);
+    printf("\n\ncurrent list is :- ");
+    sll_printlist(head);
     //searching elements in sll
     while(1){
         int value,choice;
-        printf("\nenter the element to be searched :- ");
+        printf("\n\nenter the element to be searched :- ");
         scanf("%d",&value);
         int index=sll_search(head,value);
         printf("\nelement found at index :- %d",index);
@@ -52,7 +58,7 @@ void sll_Demo(void){
     //deleting elements in sll
     while(1){
         int value,choice;
-        printf("enter the element to be deleted :- ");
+        printf("\nenter the element to be deleted :- ");
         scanf("%d",&value);
         sll_deleteByValue(&head,value);
         printf("\nsll after deletion - ");
